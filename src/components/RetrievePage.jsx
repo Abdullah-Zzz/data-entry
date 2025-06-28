@@ -6,11 +6,12 @@ function RetrievePage() {
   const { name } = useParams();
   const [data, setData] = useState(null);
   const [notFound, setNotFound] = useState(false);
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/data/${name}`);
+        const res = await fetch(`${BACKEND_URL}/api/data/${name}`);
         const json = await res.json();
         if (json?.data?.length > 0) {
           setData(json.data[0]);
