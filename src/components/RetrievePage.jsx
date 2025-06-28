@@ -33,7 +33,7 @@ function RetrievePage() {
    <div className="retrieve-page">
     <nav className="nav-bar">
       <img src="/logodata.jpg" width={"90px"}/>
-      <h2 className="CBP">CBP</h2>
+      <img src="/logo_default_dark.png" style={{margin:"10px 0px 0px 8px"}}/>
     </nav>
     <p className="qr-para">QR Code Validation</p>
   <div className="profile-layout">
