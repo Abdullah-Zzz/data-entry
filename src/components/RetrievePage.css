@@ -7,12 +7,16 @@
   border-radius: 12px;
   color: #222;
   font-family: 'Poppins', sans-serif;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   box-shadow: 0 8px 8px rgba(156, 156, 156, 0.15);
 
 }
 .qr-para{
   font-weight: bold;
+  box-shadow: 0 8px 8px rgba(156, 156, 156, 0.15);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
 .nav-bar{
   display: flex;
@@ -28,7 +32,6 @@
 .CBP{
   margin-top: -1px;
 }
-/* Page title */
 .info-title {
   color: #0fcba7;
   font-size: 40px;
@@ -42,6 +45,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 10px;
 
 }
 
