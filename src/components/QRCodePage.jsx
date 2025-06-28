@@ -5,7 +5,8 @@ import QRCode from "react-qr-code";
 
 function QRCodePage() {
   const { name } = useParams();
-  const retrieveURL = `http://localhost:5173/retrieve/${name}`;
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+  const retrieveURL = `${BACKEND_URL}/retrieve/${name}`;
 
   return (
     <div style={{ textAlign: "center", padding: "40px" }}>

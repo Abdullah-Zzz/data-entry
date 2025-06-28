@@ -8,9 +8,10 @@ function App() {
   const [data, setData] = useState([]);
   const [queryName, setQueryName] = useState("");
   const navigate = useNavigate();
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
   const fetchData = async () => {
-    const res = await fetch("http://localhost:5000/api/data");
+    const res = await fetch(`${BACKEND_URL}/api/data`);
     const json = await res.json();
     setData(json);
   };
@@ -32,7 +33,7 @@ function App() {
     if (!name) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/data/${name}`);
+      const res = await fetch(`${BACKEND_URL}/api/data/${name}`);
       const json = await res.json();
 
       if (json?.data?.length > 0) {

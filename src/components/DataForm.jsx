@@ -24,6 +24,7 @@ function DataForm({ onAdd, onSuccess }) {
     approvalStatus: false,
     approvalDate: "",
   });
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -36,7 +37,7 @@ function DataForm({ onAdd, onSuccess }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/data", {
+      const res = await fetch(`${BACKEND_URL}/api/data`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form)
