@@ -45,7 +45,7 @@ function RetrievePage() {
     <div className="retrieve-page">
       <nav className="nav-bar">
         <img src="/logodata.jpg" width={"90px"} />
-        <img src="/logo_default_dark.png" style={{ margin: "10px 0px 0px 8px" }} />
+        <img src="/logo_default_dark.png"  />
       </nav>
       <p className="qr-para">{t("QR Code Validation")} (QR Code Validation)</p>
 
