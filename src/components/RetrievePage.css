@@ -50,13 +50,20 @@
 
 /* Profile image styling */
 .image-container {
-  align-self: flex-start;
+  width: 120px;
+  height: 160px;
+  overflow: hidden;       /* Crop overflow */
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-img {
-  width: 130px;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover;       /* Crop instead of resize */
 }
 
 /* Information display grid */
