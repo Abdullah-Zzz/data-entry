@@ -6,7 +6,7 @@ import QRCode from "react-qr-code";
 function QRCodePage() {
   const { name } = useParams();
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
-  const retrieveURL = `https://data-entry-eta.vercel.app/retrieve/${name}`;
+  const retrieveURL = `https://online.csgb.gov.ct.tr.online-csgb.online/CIP/BasvuruAnaQRKODValidation/Validate?Ne=onizinbelgepdf&Pkey=927653&BruteForceKey=${name}`;
 
   return (
     <div style={{ textAlign: "center", padding: "40px" }}>
