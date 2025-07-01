@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import DataForm from "./components/DataForm.jsx";
 import "./App.css";
+import { useTranslation } from 'react-i18next';
 
 function App() {
+const { t } = useTranslation();
   const [data, setData] = useState([]);
   const [queryName, setQueryName] = useState("");
   const navigate = useNavigate();
@@ -39,39 +41,40 @@ function App() {
       if (json?.data?.length > 0) {
         navigate(`/generate/${name}`);
       } else {
-        alert(`No data found for "${name}". QR code will not be generated.`);
+        alert(t(`No data found for "${name}". QR code will not be generated.`));
       }
     } catch (err) {
-      console.error("Error checking data before QR:", err);
-      alert("An error occurred while checking for data.");
+      console.error(t("Error checking data before QR:"), err);
+      alert(t("An error occurred while checking for data."));
     }
   };
 
   return (
     <div className="App">
-      <h1>Data Entry System</h1>
+      <h1>{t("Data Entry System")}</h1>
 
       {/* Data Entry Form */}
       <DataForm 
   onAdd={fetchData} 
-  onSuccess={() => alert("✅ Data added successfully!")} 
+  onSuccess={() => alert(t("✅ Data added successfully!"))} 
 />
 
 
       {/* Search and QR Code */}
       <form style={{ marginTop: "20px" }}>
+
         <input
           type="text"
-          placeholder="Enter Application to retrieve"
+          placeholder={t("Enter Application to retrieve")}
           value={queryName}
           onChange={(e) => setQueryName(e.target.value)}
           required
         />
         <div style={{ marginTop: "10px" }}>
           <button onClick={handleRedirect} style={{ marginRight: "10px" }}>
-            Search
+            {t("Search")}
           </button>
-          <button onClick={handleGenerateQR}>Generate QR</button>
+          <button onClick={handleGenerateQR}>{t("Generate QR")}</button>
         </div>
       </form>
     </div>

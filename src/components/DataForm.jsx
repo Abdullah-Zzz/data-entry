@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./DataForm.css";
+import { useTranslation } from 'react-i18next';
 
 // Utility to convert camelCase or PascalCase to readable format
 const beautifyLabel = (str) =>
@@ -10,6 +11,7 @@ const beautifyLabel = (str) =>
 
 
 function DataForm({ onAdd, onSuccess }) {
+  const { t } = useTranslation();
   const [form, setForm] = useState({
     image: "",
     applicationNo: "",
@@ -61,18 +63,18 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
         if (onAdd) onAdd();
         if (onSuccess) onSuccess();
       } else {
-        alert("❌ Failed to add data. Please try again.");
+        alert(t("❌ Failed to add data. Please try again."));
       }
     } catch (err) {
       console.error("Submit error:", err);
-      alert("❌ An error occurred while submitting data.");
+      alert(t("❌ An error occurred while submitting data."));
     }
   };
 
   return (
     <form className="data-form" onSubmit={handleSubmit}>
       <div className="form-group">
-        <label htmlFor="image">Upload Image</label>
+        <label htmlFor="image">{t("Upload Image")}</label>
         <input
           type="file"
           id="image"
@@ -90,7 +92,7 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
       {form.image && (
         <div className="form-group">
-          <label>Preview:</label>
+          <label>{t("Preview")}:</label>
           <img
             src={form.image}
             alt="Preview"
@@ -104,7 +106,7 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
         return (
           <div className="form-group" key={key}>
-            <label htmlFor={key}>{beautifyLabel(key)}</label>
+            <label htmlFor={key}>{t(beautifyLabel(key))}</label>
             {typeof value === "boolean" ? (
               <input
                 type="checkbox"
