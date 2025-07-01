@@ -57,17 +57,17 @@ function RetrievePage() {
         </div>
 
         <div className="info-grid">
-          <div><span>{t("Application No")}</span> <strong>{data.applicationNo}</strong></div>
-          <div><span>{t("Application Type")}</span> <strong>{data.applicationType}</strong></div>
-          <div><span>{t("Employee (worker) Name Surname")}</span> <strong>{data.Name}</strong></div>
-          <div><span>{t("Employee (worker) Passport No")}</span> <strong>{data.passportNo}</strong></div>
-          <div><span>{t("Employee (worker) TR Identity Number")}</span> <strong>{data.TRidentityNumber}</strong></div>
-          <div><span>{t("Employee (worker) Mother's Name:")}</span> <strong>{data.MothersName}</strong></div>
-          <div style={{ marginBottom: "40px" }}><span>{t("Employee (worker) Father's Name")}</span> <strong>{data.fathersName}</strong></div>
-          <div><span>{t("Document Validity Start Date")}</span> <strong>{data.documentValidityStartDate}</strong></div>
-          <div><span>{t("Document Validity End Date")}</span> <strong>{data.documentValidityEndDate}</strong></div>
-          <div><span>{t("Approval Status")}</span> <strong>{data.approvalStatus ? "Yes" : "No"}</strong></div>
-          <div><span>{t("Approval Date")}</span> <strong>{data.approvalDate}</strong></div>
+          <div><span>{t("Application No")}:</span> <strong>{data.applicationNo}</strong></div>
+          <div><span>{t("Application Type")}:</span> <strong>{data.applicationType}</strong></div>
+          <div><span>{t("Employee (worker) Name Surname")}:</span> <strong>{data.Name}</strong></div>
+          <div><span>{t("Employee (worker) Passport No")}:</span> <strong>{data.passportNo}</strong></div>
+          <div><span>{t("Employee (worker) TR Identity Number")}:</span> <strong>{data.TRidentityNumber}</strong></div>
+          <div><span>{t("Employee (worker) Mother's Name")}:</span> <strong>{data.MothersName}</strong></div>
+          <div style={{ marginBottom: "40px" }}><span>{t("Employee (worker) Father's Name")}:</span> <strong>{data.fathersName}</strong></div>
+          <div><span>{t("Document Validity Start Date")}:</span> <strong>{data.documentValidityStartDate}</strong></div>
+          <div><span>{t("Document Validity End Date")}:</span> <strong>{data.documentValidityEndDate}</strong></div>
+          <div><span>{t("Approval Status")}:</span> <strong>{data.approvalStatus ? "Yes" : "No"}</strong></div>
+          <div><span>{t("Approval Date")}:</span> <strong>{data.approvalDate}</strong></div>
         </div>
       </div>
     </div>
