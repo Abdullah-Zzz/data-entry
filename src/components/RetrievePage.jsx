@@ -47,7 +47,7 @@ function RetrievePage() {
         <img src="/logodata.jpg" width={"90px"} />
         <img src="/logo_default_dark.png" style={{ margin: "10px 0px 0px 8px" }} />
       </nav>
-      <p className="qr-para">{t("QR Code Validation")}</p>
+      <p className="qr-para">{t("QR Code Validation")} (QR Code Validation)</p>
 
       <div className="profile-layout">
         <h2 className="info-title">{t("Information")}</h2>
@@ -57,11 +57,11 @@ function RetrievePage() {
         </div>
 
         <div className="info-grid">
-          <div><span>{t("Application No")}:</span> <strong>{data.applicationNo}</strong></div>
+          <div><span>{t("Application")} No:</span><strong>{data.applicationNo}</strong></div>
           <div><span>{t("Application Type")}:</span> <strong>{data.applicationType}</strong></div>
           <div><span>{t("Employee (worker) Name Surname")}:</span> <strong>{data.Name}</strong></div>
-          <div><span>{t("Employee (worker) Passport No")}:</span> <strong>{data.passportNo}</strong></div>
-          <div><span>{t("Employee (worker) TR Identity Number")}:</span> <strong>{data.TRidentityNumber}</strong></div>
+          <div><span>{t("Employee (worker) Passport")} No:</span> <strong>{data.passportNo}</strong></div>
+          <div><span>{t("Employee (worker)")} TC Kimlik No:</span> <strong>{data.TRidentityNumber}</strong></div>
           <div><span>{t("Employee (worker) Mother's Name")}:</span> <strong>{data.MothersName}</strong></div>
           <div style={{ marginBottom: "40px" }}><span>{t("Employee (worker) Father's Name")}:</span> <strong>{data.fathersName}</strong></div>
           <div><span>{t("Document Validity Start Date")}:</span> <strong>{data.documentValidityStartDate}</strong></div>
