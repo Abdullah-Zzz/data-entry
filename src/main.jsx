@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/retrieve/:name" element={<RetrievePage />} />
+        <Route path="/CIP/BasvuruAnaQRKODValidation/Validate" element={<RetrievePage />} />
         <Route path="/generate/:name" element={<QRCodePage />} />
       </Routes>
     </BrowserRouter>

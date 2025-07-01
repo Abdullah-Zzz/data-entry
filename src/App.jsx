@@ -23,7 +23,7 @@ function App() {
   const handleRedirect = (e) => {
     e.preventDefault();
     if (queryName.trim()) {
-      navigate(`/retrieve/${queryName.trim()}`);
+      navigate(`/CIP/BasvuruAnaQRKODValidation/Validate?Ne=onizinbelgepdf&Pkey=927653&BruteForceKey=${queryName.trim()}`);
     }
   };
 
