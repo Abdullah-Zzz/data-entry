@@ -48,6 +48,7 @@ function RetrievePage() {
       minHeight: '100vh',
       margin: 0,
       padding: 0,
+      fontSize: '13px', 
       fontWeight: 300,
       fontFamily: 'Poppins',
       lineHeight: '19.5px',
@@ -57,7 +58,7 @@ function RetrievePage() {
       <div>
         <div style={{ display: 'flex', flexWrap: 'wrap', marginRight: '-15px', marginLeft: '-15px' }}>
 
-          {/* Centered Logos */}
+          {/* Logos */}
           <div style={{ width: '100%', paddingRight: '15px', paddingLeft: '15px', textAlign: 'center' }}>
             <p>
               <img align="middle" width="100" height="100" src="/logodata.jpg" />
@@ -96,7 +97,7 @@ function RetrievePage() {
                 </div>
               </div>
 
-              <div style={{ color: 'rgb(17, 6, 6)', padding: '10px', fontSize:"13px"}}>
+              <div style={{ color: 'rgb(17, 6, 6)', padding: '10px' }}>
                 <h2 style={{
                   color: 'rgb(52, 191, 163)',
                   fontSize: '28px',
