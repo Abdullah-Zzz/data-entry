@@ -210,17 +210,17 @@ function RetrievePage() {
             </table>
 
             <div className="info-grid">
-          <div><span>Başvuru No:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>{data.applicationNo}</b></div>
-          <div><span>Başvuru Tipi:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>Ön İzin Başvurusu</b></div>
-          <div><span>Çalışan (İşçi) Ad Soyad:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>{data.Name}</b></div>
-          <div><span>Çalışan (İşçi) Pasaport No:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>{data.passportNo}</b></div>
+          <div><span>Başvuru No:</span> <b style={{ fontWeight: 700}}>{data.applicationNo}</b></div>
+          <div><span>Başvuru Tipi:</span> <b style={{ fontWeight: 700}}>Ön İzin Başvurusu</b></div>
+          <div><span>Çalışan (İşçi) Ad Soyad:</span> <b style={{ fontWeight: 700}}>{data.Name}</b></div>
+          <div><span>Çalışan (İşçi) Pasaport No:</span> <b style={{ fontWeight: 700}}>{data.passportNo}</b></div>
           <div><span>Çalışan (İşçi) TC Kimlik No:</span> <strong></strong></div>
-          <div><span>Çalışan(İşçi) Anne Adı:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>{data.MothersName}</b></div>
-          <div style={{ marginBottom: "40px" }}><span>Çalışan(İşçi) Baba Adı:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>{data.fathersName}</b></div>
-          <div><span>Belge Geçerlilik Başlangıç Tarihi:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>{data.documentValidityStartDate}</b></div>
-          <div><span>Belge Geçerlilik Bitiş Tarihi:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>{data.documentValidityEndDate}</b></div>
-          <div><span>Onay Durumu:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>{data.approvalStatus ? "Yes" : "No"}</b></div>
-          <div><span>Onay Tarihi:</span> <b style={{ fontWeight: 700, boxSizing: 'border-box' }}>{data.approvalDate}</b></div>
+          <div><span>Çalışan(İşçi) Anne Adı:</span> <b style={{ fontWeight: 700}}>{data.MothersName}</b></div>
+          <div style={{ marginBottom: "40px" }}><span>Çalışan(İşçi) Baba Adı:</span> <b style={{ fontWeight: 700}}>{data.fathersName}</b></div>
+          <div><span>Belge Geçerlilik Başlangıç Tarihi:</span> <b style={{ fontWeight: 700}}>{data.documentValidityStartDate}</b></div>
+          <div><span>Belge Geçerlilik Bitiş Tarihi:</span> <b style={{ fontWeight: 700 }}>{data.documentValidityEndDate}</b></div>
+          <div><span>Onay Durumu:</span> <b style={{ fontWeight: 700 }}>{data.approvalStatus ? "Yes" : "No"}</b></div>
+          <div><span>Onay Tarihi:</span> <b style={{ fontWeight: 700 }}>{data.approvalDate}</b></div>
         </div>
           </div>
         </div>
