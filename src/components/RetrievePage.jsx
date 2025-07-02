@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import "./RetrievePage.css";
 import { useTranslation } from 'react-i18next';
 
+
+// Helper to get URL query parameters
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -13,7 +15,7 @@ function RetrievePage() {
   const name = query.get("BruteForceKey");
   const [data, setData] = useState(null);
   const [notFound, setNotFound] = useState(false);
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL; 
 
   useEffect(() => {
     if (!name) return setNotFound(true);
@@ -36,200 +38,39 @@ function RetrievePage() {
 
     fetchData();
   }, [name]);
-
   if (notFound) return <h2 style={{ textAlign: "center" }}>{t(`❌ No data found for ${name}`)}</h2>;
   if (!data) return <p style={{ textAlign: "center" }}>{t("Loading...")}</p>;
 
   return (
-    <body style={{
-  cursor: 'auto',
-  display: 'flex',
-  WebkitBoxOrient: 'vertical',
-  WebkitBoxDirection: 'normal',
-  flexDirection: 'column',
-  height: '569px',
-  margin: '0px',
-  padding: '0px',
-  fontSize: '13px',
-  fontWeight: 300,
-  fontFamily: 'Poppins',
-  WebkitFontSmoothing: 'antialiased',
-  lineHeight: '19.5px',
-  color: 'rgb(33, 37, 41)',
-  textAlign: 'left',
-  backgroundColor: 'rgb(255, 255, 255)',
-  boxSizing: 'border-box'
-}}>
+    <div className="retrieve-page">
+      <nav className="nav-bar">
+        <img src="/logodata.jpg" width={"90px"} />
+        <img src="/logo_default_dark.png"  />
+      </nav>
+      <p className="qr-para">{t("QR Code Validation")} (QR Code Validation)</p>
 
-  <div style={{ boxSizing: 'border-box' }}>
-    <div style={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      marginRight: '-15px',
-      marginLeft: '-15px',
-      boxSizing: 'border-box'
-    }}>
+      <div className="profile-layout">
+        <h2 className="info-title">{t("Information")}</h2>
 
-      <div style={{
-        WebkitBoxFlex: 0,
-        flex: '0 0 100%',
-        maxWidth: '100%',
-        position: 'relative',
-        width: '100%',
-        minHeight: '1px',
-        paddingRight: '15px',
-        paddingLeft: '15px',
-        boxSizing: 'border-box'
-      }}>
-
-        <p align="center" style={{
-          marginTop: '0px',
-          marginBottom: '13px',
-          boxSizing: 'border-box'
-        }}>
-          <img align="middle" width="100" height="100" src="/logodata.jpg" style={{
-            verticalAlign: 'middle',
-            borderStyle: 'none',
-            boxSizing: 'border-box'
-          }} />
-        </p>
-        <p align="center" style={{
-          marginTop: '0px',
-          marginBottom: '13px',
-          boxSizing: 'border-box'
-        }}>
-          <img align="middle" src="/logo_default_dark.png" style={{
-            verticalAlign: 'middle',
-            borderStyle: 'none',
-            boxSizing: 'border-box'
-          }} />
-        </p>
-      </div>
-
-      <div style={{
-        WebkitBoxFlex: 0,
-        flex: '0 0 100%',
-        maxWidth: '100%',
-        position: 'relative',
-        width: '100%',
-        minHeight: '1px',
-        paddingRight: '15px',
-        paddingLeft: '15px',
-        boxSizing: 'border-box',
-        textAlign: 'left'
-      }}>
-        <div style={{
-          boxShadow: 'rgba(69, 65, 78, 0.08) 0px 1px 15px 1px',
-          backgroundColor: 'rgb(255, 255, 255)',
-          marginBottom: '28.6px',
-          boxSizing: 'border-box'
-        }}>
-          <div style={{
-            borderBottom: '1px solid rgb(235, 237, 242)',
-            display: 'flex',
-            WebkitBoxOrient: 'horizontal',
-            WebkitBoxDirection: 'normal',
-            flexDirection: 'row',
-            WebkitBoxAlign: 'stretch',
-            alignItems: 'stretch',
-            WebkitBoxPack: 'justify',
-            justifyContent: 'space-between',
-            padding: '0px 28.6px',
-            height: '66.2969px',
-            position: 'relative',
-            boxSizing: 'border-box'
-          }}>
-            <div style={{
-              display: 'flex',
-              WebkitBoxAlign: 'center',
-              alignItems: 'center',
-              alignContent: 'flex-start',
-              boxSizing: 'border-box'
-            }}>
-              <div style={{
-                display: 'flex',
-                WebkitBoxAlign: 'center',
-                alignItems: 'center',
-                boxSizing: 'border-box'
-              }}>
-                <h3 style={{
-                  color: 'rgb(87, 89, 98)',
-                  display: 'flex',
-                  WebkitBoxAlign: 'center',
-                  alignItems: 'center',
-                  fontSize: '16.9px',
-                  fontWeight: 500,
-                  fontFamily: 'Roboto,sans-serif',
-                  margin: '0px',
-                  padding: '0px',
-                  marginBottom: '0px',
-                  lineHeight: '20.28px',
-                  marginTop: '0px',
-                  boxSizing: 'border-box'
-                }}>
-                  Kare Kod Validasyonu (QR Code Validation)
-                </h3>
-              </div>
-            </div>
-          </div>
-          <div style={{
-            color: 'rgb(17, 6, 6)',
-            padding: '28.6px',
-            boxSizing: 'border-box',
-            textAlign: 'left'
-          }}>
-
-            <h2 style={{
-              color: 'rgb(52, 191, 163)',
-              fontSize: '26px',
-              marginBottom: '6.5px',
-              fontFamily: 'Poppins',
-              fontWeight: 500,
-              lineHeight: '31.2px',
-              marginTop: '0px',
-              boxSizing: 'border-box'
-            }}>Bilgiler</h2>
-
-            <table style={{
-              borderCollapse: 'collapse',
-              boxSizing: 'border-box'
-            }}>
-              <tbody style={{ boxSizing: 'border-box' }}>
-                <tr style={{ boxSizing: 'border-box' }}>
-                  <td style={{ boxSizing: 'border-box' }}></td>
-                  <td style={{ boxSizing: 'border-box' }}>
-                    <img width="90" height="120" style={{
-                      imageOrientation: 'from-image',
-                      verticalAlign: 'middle',
-                      borderStyle: 'none',
-                      boxSizing: 'border-box'
-                    }} src={data.image} />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div className="info-grid">
-          <div><span>Başvuru No:</span> <b style={{ fontWeight: 700}}>{data.applicationNo}</b></div>
-          <div><span>Başvuru Tipi:</span> <b style={{ fontWeight: 700}}>Ön İzin Başvurusu</b></div>
-          <div><span>Çalışan (İşçi) Ad Soyad:</span> <b style={{ fontWeight: 700}}>{data.Name}</b></div>
-          <div><span>Çalışan (İşçi) Pasaport No:</span> <b style={{ fontWeight: 700}}>{data.passportNo}</b></div>
-          <div><span>Çalışan (İşçi) TC Kimlik No:</span> <strong></strong></div>
-          <div><span>Çalışan(İşçi) Anne Adı:</span> <b style={{ fontWeight: 700}}>{data.MothersName}</b></div>
-          <div style={{ marginBottom: "40px" }}><span>Çalışan(İşçi) Baba Adı:</span> <b style={{ fontWeight: 700}}>{data.fathersName}</b></div>
-          <div><span>Belge Geçerlilik Başlangıç Tarihi:</span> <b style={{ fontWeight: 700}}>{data.documentValidityStartDate}</b></div>
-          <div><span>Belge Geçerlilik Bitiş Tarihi:</span> <b style={{ fontWeight: 700 }}>{data.documentValidityEndDate}</b></div>
-          <div><span>Onay Durumu:</span> <b style={{ fontWeight: 700 }}>{data.approvalStatus ? "Yes" : "No"}</b></div>
-          <div><span>Onay Tarihi:</span> <b style={{ fontWeight: 700 }}>{data.approvalDate}</b></div>
+        <div className="image-container">
+          <img src={data.image} alt="Uploaded" className="profile-img" />
         </div>
-          </div>
+
+        <div className="info-grid">
+          <div><span>{t("Application")} No:</span><strong>{data.applicationNo}</strong></div>
+          <div><span>{t("Application Type")}:</span> <strong>Ön İzin Başvurusu</strong></div>
+          <div><span>{t("Employee (worker) Name Surname")}:</span> <strong>{data.Name}</strong></div>
+          <div><span>{t("Employee (worker) Passport")} No:</span> <strong>{data.passportNo}</strong></div>
+          <div><span>{t("Employee (worker)")} TC Kimlik No:</span> <strong></strong></div>
+          <div><span>{t("Employee (worker) Mother's Name")}:</span> <strong>{data.MothersName}</strong></div>
+          <div style={{ marginBottom: "40px" }}><span>{t("Employee (worker) Father's Name")}:</span> <strong>{data.fathersName}</strong></div>
+          <div><span>{t("Document Validity Start Date")}:</span> <strong>{data.documentValidityStartDate}</strong></div>
+          <div><span>{t("Document Validity End Date")}:</span> <strong>{data.documentValidityEndDate}</strong></div>
+          <div><span>{t("Approval Status")}:</span> <strong>{data.approvalStatus ? "Evet" : "Hayır"}</strong></div>
+          <div><span>{t("Approval Date")}:</span> <strong>{data.approvalDate}</strong></div>
         </div>
       </div>
-
     </div>
-  </div>
-</body>
-
   );
 }
 
