@@ -61,3 +61,21 @@ b {
     line-height: 1.4;
   }
 }
+
+.data-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .data-text {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+.left-align {
+  text-align: left;
+  padding: 28.6px;
+  color: rgb(17, 6, 6);
+}
