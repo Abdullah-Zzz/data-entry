@@ -79,7 +79,7 @@ function RetrievePage() {
                 borderBottom: '1px solid rgb(235, 237, 242)',
                 display: 'flex',
                 justifyContent: 'space-between',
-                padding: '0px 28.6px',
+                paddingLeft: '10px',
                 height: '66.2969px'
               }}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -97,7 +97,7 @@ function RetrievePage() {
                 </div>
               </div>
 
-              <div style={{ color: 'rgb(17, 6, 6)', padding: '28.6px' }}>
+              <div style={{ color: 'rgb(17, 6, 6)', padding: '10px' }}>
                 <h2 style={{
                   color: 'rgb(52, 191, 163)',
                   fontSize: '28px',
