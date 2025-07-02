@@ -97,7 +97,7 @@ function RetrievePage() {
                 </div>
               </div>
 
-              <div style={{ color: 'rgb(17, 6, 6)', padding: '10px' }}>
+              <div style={{ color: 'rgb(17, 6, 6)', padding: '10px', fontSize:"13px"}}>
                 <h2 style={{
                   color: 'rgb(52, 191, 163)',
                   fontSize: '28px',
