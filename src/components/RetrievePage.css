@@ -7,3 +7,9 @@ img {
 b {
   font-weight: bold !important;
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 13px !important;
+  }
+}

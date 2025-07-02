@@ -48,7 +48,6 @@ function RetrievePage() {
       minHeight: '100vh',
       margin: 0,
       padding: 0,
-      fontSize: '14px',
       fontWeight: 300,
       fontFamily: 'Poppins',
       lineHeight: '19.5px',
