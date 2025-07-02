@@ -9,6 +9,12 @@ const beautifyLabel = (str) =>
     .replace(/([a-z\d])([A-Z])/g, '$1 $2')
     .replace(/^./, (s) => s.toUpperCase());
 
+// Format YYYY-MM-DD to DD.MM.YYYY
+function formatDateToDots(dateStr) {
+  if (!dateStr) return "";
+  const [year, month, day] = dateStr.split("-");
+  return `${parseInt(day)}.${parseInt(month)}.${year}`;
+}
 
 function DataForm({ onAdd, onSuccess }) {
   const { t } = useTranslation();
@@ -26,7 +32,8 @@ function DataForm({ onAdd, onSuccess }) {
     approvalStatus: false,
     approvalDate: "",
   });
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -38,15 +45,24 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formattedForm = {
+      ...form,
+      documentValidityStartDate: formatDateToDots(form.documentValidityStartDate),
+      documentValidityEndDate: formatDateToDots(form.documentValidityEndDate),
+      approvalDate: formatDateToDots(form.approvalDate)
+    };
+
     try {
       const res = await fetch(`${BACKEND_URL}/api/data`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
+        body: JSON.stringify(formattedForm)
       });
 
       if (res.ok) {
         setForm({
+          image: "",
           applicationNo: "",
           applicationType: "",
           Name: "",
@@ -102,7 +118,7 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
       )}
 
       {Object.entries(form).map(([key, value]) => {
-        if (key === "image") return null; // skip image here
+        if (key === "image") return null;
 
         return (
           <div className="form-group" key={key}>
@@ -138,7 +154,6 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
           </div>
         );
       })}
-
 
       <button type="submit" className="submit-btn">Submit</button>
     </form>

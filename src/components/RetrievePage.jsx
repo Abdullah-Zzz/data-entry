@@ -3,8 +3,6 @@ import { useLocation } from "react-router-dom";
 import "./RetrievePage.css";
 import { useTranslation } from 'react-i18next';
 
-
-// Helper to get URL query parameters
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -15,7 +13,7 @@ function RetrievePage() {
   const name = query.get("BruteForceKey");
   const [data, setData] = useState(null);
   const [notFound, setNotFound] = useState(false);
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL; 
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     if (!name) return setNotFound(true);
@@ -38,40 +36,70 @@ function RetrievePage() {
 
     fetchData();
   }, [name]);
+
   if (notFound) return <h2 style={{ textAlign: "center" }}>{t(`❌ No data found for ${name}`)}</h2>;
   if (!data) return <p style={{ textAlign: "center" }}>{t("Loading...")}</p>;
 
   return (
-    <div className="retrieve-page">
-      <nav className="nav-bar">
-        <img src="/logodata.jpg" width={"90px"} />
-        <img src="/logo_default_dark.png"  />
-      </nav>
-      <p className="qr-para">{t("QR Code Validation")} (QR Code Validation)</p>
+    <div style={{ cursor: 'auto', display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: 0, padding: 0, fontSize: '14px', fontWeight: 300, fontFamily: 'Poppins', lineHeight: '19.5px', color: 'rgb(33, 37, 41)', textAlign: 'left', backgroundColor: '#fff',}}>
+      <div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', marginRight: '-15px', marginLeft: '-15px' }}>
 
-      <div className="profile-layout">
-        <h2 className="info-title">{t("Information")}</h2>
+          <div style={{ flex: '0 0 100%', maxWidth: '100%', paddingRight: '15px', paddingLeft: '15px' }}>
+            <p align="center">
+              <img align="middle" width="100" height="100" src="/logodata.jpg" />
+            </p>
+            <p align="center">
+              <img align="middle" src="/logo_default_dark.png" />
+            </p>
+          </div>
 
-        <div className="image-container">
-          <img src={data.image} alt="Uploaded" className="profile-img" />
-        </div>
+          <div style={{ flex: '0 0 25%', maxWidth: '25%', paddingRight: '15px', paddingLeft: '15px' }}></div>
 
-        <div className="info-grid">
-          <div><span>{t("Application")} No:</span><strong>{data.applicationNo}</strong></div>
-          <div><span>{t("Application Type")}:</span> <strong>{data.applicationType}</strong></div>
-          <div><span>{t("Employee (worker) Name Surname")}:</span> <strong>{data.Name}</strong></div>
-          <div><span>{t("Employee (worker) Passport")} No:</span> <strong>{data.passportNo}</strong></div>
-          <div><span>{t("Employee (worker)")} TC Kimlik No:</span> <strong>{data.TRidentityNumber}</strong></div>
-          <div><span>{t("Employee (worker) Mother's Name")}:</span> <strong>{data.MothersName}</strong></div>
-          <div style={{ marginBottom: "40px" }}><span>{t("Employee (worker) Father's Name")}:</span> <strong>{data.fathersName}</strong></div>
-          <div><span>{t("Document Validity Start Date")}:</span> <strong>{data.documentValidityStartDate}</strong></div>
-          <div><span>{t("Document Validity End Date")}:</span> <strong>{data.documentValidityEndDate}</strong></div>
-          <div><span>{t("Approval Status")}:</span> <strong>{data.approvalStatus ? "Yes" : "No"}</strong></div>
-          <div><span>{t("Approval Date")}:</span> <strong>{data.approvalDate}</strong></div>
-        </div>
+          <div style={{ flex: '0 0 50%', maxWidth: '50%', paddingRight: '15px', paddingLeft: '15px' }}>
+            <div style={{ boxShadow: 'rgba(69, 65, 78, 0.08) 0px 1px 15px 1px', backgroundColor: '#fff', marginBottom: '28.6px' }}>
+              <div style={{ borderBottom: '1px solid rgb(235, 237, 242)', display: 'flex', justifyContent: 'space-between', padding: '0px 28.6px', height: '66.2969px' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <h3 style={{ color: 'rgb(87, 89, 98)', display: 'flex', alignItems: 'center', fontSize: '15px', fontWeight: 500, fontFamily: 'Roboto,sans-serif', margin: 0 }}>
+                    Kare Kod Validasyonu (QR Code Validation)
+                  </h3>
+                </div>
+              </div>
+
+              <div style={{ color: 'rgb(17, 6, 6)', padding: '28.6px' }}>
+                <h2 style={{ color: 'rgb(52, 191, 163)', fontSize: '28px', marginBottom: '6.5px', fontFamily: 'Poppins', fontWeight: 500 }}>Bilgiler</h2>
+                <table style={{ borderCollapse: 'collapse' }}>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <img width="90" height="120" style={{ imageOrientation: 'from-image' }} src={data.image} />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                Başvuru No:<b>{data.applicationNo}</b><br />
+                Başvuru Tipi:<b>Ön İzin Başvurusu</b><br />
+                Çalışan (İşçi) Ad Soyad:<b>{data.Name}</b><br />
+                Çalışan (İşçi) Pasaport No:<b>{data.passportNo}</b><br />
+                Çalışan (İşçi) TC Kimlik No:<b>{data.TRidentityNumber}</b><br />
+                Çalışan(İşçi) Anne Adı:<b>{data.MothersName}</b><br />
+                Çalışan(İşçi) Baba Adı:<b>{data.fathersName}</b><br /><br />
+                Belge Geçerlilik Başlangıç Tarihi:<b>{data.documentValidityStartDate}</b><br />
+                Belge Geçerlilik Bitiş Tarihi:<b>{data.documentValidityEndDate}</b><br />
+                Onay Durumu:<b>{data.approvalStatus ? 'Evet' : 'Hayır'}</b><br />
+                Onay Tarihi:<b>{data.approvalDate}</b><br />
+              </div>
+
+            </div>
+          </div>
+
+          <div style={{ flex: '0 0 25%', maxWidth: '25%', paddingRight: '15px', paddingLeft: '15px' }}></div>
+
+        </div>  
       </div>
     </div>
-  );
+  );  
 }
 
 export default RetrievePage;
