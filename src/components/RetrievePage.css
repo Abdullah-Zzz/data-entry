@@ -5,11 +5,8 @@ img {
 }
 
 b {
-  font-weight: bold !important;
+  font-weight: bold;
+  font-size: inherit !important; 
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 13px !important;
-  }
-}
+
