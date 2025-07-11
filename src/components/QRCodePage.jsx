@@ -1,10 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import QRCode from "react-qr-code";
+import { useSearchParams } from 'react-router-dom';
 
 function QRCodePage() {
-  const { name } = useParams();
-  const retrieveURL = `https://online.csgb.gov.ct.tr.online-csgb.online/CIP/BasvuruAnaQRKODValidation/Validate?Ne=onizinbelgepdf&Pkey=927653&BruteForceKey=${name}`;
+  const [searchParams, setSearchParams] = useSearchParams();
+  const ap = searchParams.get('ap')
+  const retrieveURL = `https://online.csgb.gov.ct.tr.online-csgb.online/CIP/BasvuruAnaQRKODValidation/Validate?Ne=onizinbelgepdf&Pkey=927653&BruteForceKey=${ap}`;
 
   return (
     <div style={{ textAlign: "center", padding: "40px" }}>

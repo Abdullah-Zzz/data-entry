@@ -19,10 +19,9 @@ function RetrievePage() {
 
   useEffect(() => {
     if (!name) return setNotFound(true);
-
     const fetchData = async () => {
       try {
-        const res = await fetch(`${BACKEND_URL}/api/data/${name}`);
+        const res = await fetch(`${BACKEND_URL}/api/data/application/?ap=${name}`);
         const json = await res.json();
 
         if (json?.data?.length > 0) {
@@ -44,8 +43,8 @@ function RetrievePage() {
   return (
     <div className="retrieve-page">
       <nav className="nav-bar">
-        <img src="/logodata.jpg" width={"90px"} />
-        <img src="/logo_default_dark.png"  />
+        <img src="/logodata.jpg" width={"90px"} className="logo"/>
+        <img src="/logo_default_dark.png"  className="cbp-image"/>
       </nav>
       <p className="qr-para">{t("QR Code Validation")} (QR Code Validation)</p>
 

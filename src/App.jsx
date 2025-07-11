@@ -35,11 +35,11 @@ const { t } = useTranslation();
     if (!name) return;
 
     try {
-      const res = await fetch(`${BACKEND_URL}/api/data/${name}`);
+      const res = await fetch(`${BACKEND_URL}/api/data/application/?ap=${name}`);
       const json = await res.json();
 
       if (json?.data?.length > 0) {
-        navigate(`/generate/${name}`);
+        navigate(`/generate/?ap=${name}`);
       } else {
         alert(t(`No data found for "${name}". QR code will not be generated.`));
       }
