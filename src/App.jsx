@@ -51,7 +51,7 @@ const { t } = useTranslation();
 
   return (
     <div className="App">
-      <h1>{t("Data Entry System")}</h1>
+      <h1>Çalışma ve Sosyal Güvenlik Bakanlığı Portalı</h1>
 
       {/* Data Entry Form */}
       <DataForm 
